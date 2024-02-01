@@ -57,7 +57,6 @@ class S3UploadClient(BaseUploadClient):
         # new behavior (csv target) would strip the file name and only keep extension
 #        s3_key = f"{s3_key_prefix}pipelinewise_{stream}_{timestamp}_{os.path.basename(file)}"
         
-        s3_key_prefix = self.connection_config.get('s3_key_prefix', '')
         s3_file_naming_scheme = self.connection_config.get(
             's3_file_naming_scheme', "pipelinewise_{stream}_{timecode}.{ext}"
         )
